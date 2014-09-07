@@ -1,0 +1,3 @@
+#!/bin/bash
+
+./adb_peco.sh pidcat
