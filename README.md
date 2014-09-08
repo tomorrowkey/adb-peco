@@ -11,6 +11,14 @@ adb-peco make available to choose device after command adb, if more than one dev
 
 ![](static/adbpshell.gif)
 
+## Quick start
+`adb-peco` require [peco](https://github.com/peco/peco) so install [peco](https://github.com/peco/peco) at first.
+```bash
+git clone git@github.com:tomorrowkey/adb-peco.git
+cd adb-peco/bin
+adbp shell
+```
+
 ## Lincense
 
 ```
