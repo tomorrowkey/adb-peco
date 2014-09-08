@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./adb_peco.sh adb $1
+adb_peco.sh adb $1
