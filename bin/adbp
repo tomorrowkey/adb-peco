@@ -1,3 +1,4 @@
 #!/bin/bash
 
-adb_peco.sh adb $1
+SCRIPT=`dirname $0`/adb_peco.sh
+$SCRIPT adb $1
