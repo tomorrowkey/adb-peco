@@ -32,4 +32,5 @@ fi
 
 IFS="	" read -r id state <<< "$device"
 
+echo "$1 -s $id ${@:2}"
 $1 -s $id ${@:2}
