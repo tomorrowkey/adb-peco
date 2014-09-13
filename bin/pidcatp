@@ -1,4 +1,4 @@
 #!/bin/bash
 
 SCRIPT=`dirname $0`/adb_peco.sh
-$SCRIPT pidcat $@
+$SCRIPT pidcat "$@"
