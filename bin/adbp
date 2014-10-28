@@ -1,4 +1,10 @@
 #!/bin/bash
 
-SCRIPT=`dirname $0`/adb_peco.sh
-$SCRIPT adb "$@"
+SCRIPT="$0"
+
+if [ -n "`readlink "$SCRIPT"`" ] ; then
+    SCRIPT="`readlink "$SCRIPT"`"
+fi
+
+SCRIPT="`dirname "$SCRIPT"`/adb_peco.sh"
+"$SCRIPT" adb "$@"
