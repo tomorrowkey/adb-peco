@@ -12,6 +12,14 @@ if [ $# -eq 1 ]; then
     fi
 fi
 
+if [ $2 == 'version' ]; then
+    echo 'adb-peco version 1.1.0'
+fi
+
+case $2 in
+    'devices'| 'version' | 'help' | 'connect' | 'disconnect' | 'wait-for-device' | 'start-server' | 'kill-server' ) $1 ${@:2}; exit;;
+esac
+
 count=`adb devices | sed '/^$/d' | wc -l`
 
 if [ $count -eq 1 ]; then
