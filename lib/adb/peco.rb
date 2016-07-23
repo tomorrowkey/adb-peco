@@ -55,6 +55,7 @@ module Adb
 
     command = ['adb', serial_option, ARGV].flatten.join(' ')
     begin
+      puts "+ #{command}"
       system(command)
     rescue Interrupt
       # Ignore
