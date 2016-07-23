@@ -15,6 +15,10 @@ module Adb
         ["#{device.model} (#{device.serial})", device]
       }).first
       "-s #{device.serial}"
+
+    rescue PecoSelector::PecoUnavailableError => e
+      puts e.message
+      exit 1
     end
 
     def self.adb_action
