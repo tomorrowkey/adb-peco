@@ -4,6 +4,8 @@ require 'peco_selector'
 
 module Adb
   module Peco
+    AdbUnavailableError = Class.new(StandardError)
+
     def self.serial_option
       return nil unless adb_action
       return nil unless need_serial_option?
@@ -21,6 +23,16 @@ module Adb
       exit 1
     end
 
+    def self.adb_available?
+      system('which', 'adb', out: File::NULL)
+    end
+
+    def self.ensure_adb_available
+      unless adb_available?
+        raise AdbUnavailableError, 'adb command is not available.'
+      end
+    end
+
     def self.adb_action
       ARGV.reject{|a| a[0] == '-'}.first
     end
@@ -32,6 +44,13 @@ module Adb
         'start-server',
         'stop-server',
       ].include?(adb_action)
+    end
+
+    begin
+      ensure_adb_available
+    rescue AdbUnavailableError => e
+      puts e.message
+      exit 1
     end
 
     command = ['adb', serial_option, ARGV].flatten.join(' ')
