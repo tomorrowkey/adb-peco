@@ -3,20 +3,32 @@ adb-peco
 
 adb-peco is a extension for adb.
 
-When you command `adb shell` on the terminal that more than one devices are connected, the terminal is said like this.
+When you command `adb shell` on a terminal with several device and emulator are connected, the terminal said like following.
 
-![](static/adbshell.gif)
+![](static/command-with-adb.gif)
 
-adb-peco make available to choose device after command adb, if more than one devices are connected. like this.
+adb-peco make available to choose a device before run the command.
 
-![](static/adbpshell.gif)
+![](static/command-with-adb-peco.gif)
 
-## Quick start
-`adb-peco` require [peco](https://github.com/peco/peco) so install [peco](https://github.com/peco/peco) at first.
+## Installation
+
+### Peco is available on your environment?
+
+`adb-peco` require [peco](https://github.com/peco/peco). So install [peco](https://github.com/peco/peco) at first.
+
+### Installation gem
+
 ```bash
-git clone git@github.com:tomorrowkey/adb-peco.git
-cd adb-peco/bin
-adbp shell
+gem install adb-peco
+```
+
+## Tips
+
+Replace adb command to use adb-peco always.
+
+```bash
+alias adb='adb-peco'
 ```
 
 ## Lincense
