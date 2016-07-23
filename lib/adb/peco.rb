@@ -46,6 +46,10 @@ module Adb
       ].include?(adb_action)
     end
 
+    def self.quote(args)
+      args.map{|a| a.include?(' ') ? %Q{"#{a}"} : a }
+    end
+
     begin
       ensure_adb_available
     rescue AdbUnavailableError => e
@@ -53,7 +57,7 @@ module Adb
       exit 1
     end
 
-    command = ['adb', serial_option, ARGV].flatten.join(' ')
+    command = ['adb', serial_option, quote(ARGV)].flatten.join(' ')
     begin
       puts "+ #{command}"
       system(command)
