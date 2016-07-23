@@ -31,6 +31,10 @@ module Adb
     end
 
     command = ['adb', serial_option, ARGV].flatten.join(' ')
-    system(command)
+    begin
+      system(command)
+    rescue Interrupt
+      # Ignore
+    end
   end
 end
