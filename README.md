@@ -1,4 +1,4 @@
-adb-peco
+adb-peco [![Gem Version](https://badge.fury.io/rb/adb-peco.svg)](https://badge.fury.io/rb/adb-peco)
 =======
 
 adb-peco is a extension for adb.
