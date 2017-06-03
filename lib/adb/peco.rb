@@ -14,9 +14,9 @@ module Adb
       return nil if devices.size <= 1 || devices.size == 0
 
       device = PecoSelector.select_from(devices.map{|device|
-        ["#{device.model} (#{device.serial})", device]
+        ["#{device.model} (#{device.qualifier})", device]
       }).first
-      "-s #{device.serial}"
+      "-s #{device.qualifier}"
 
     rescue PecoSelector::PecoUnavailableError => e
       puts e.message
