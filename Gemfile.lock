@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    adb-peco (2.0.2)
+    adb-peco (2.0.3)
       device_api-android (~> 1.2)
       peco_selector (~> 1.0)
 
