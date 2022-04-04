@@ -27,6 +27,8 @@ class Adb::Peco::Command
   end
 
   def need_serial_option?
+    return false unless adb_action
+
     !['help',
       'devices',
       'version',
