@@ -1,3 +1,6 @@
+require 'peco_selector'
+require 'device_api/android'
+
 class Adb::Peco::Command
   attr_reader :argv
 
